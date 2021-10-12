@@ -20,4 +20,9 @@ describe("Controlar un Auto", () => {
   it("deberia poder girar IoD y dar orientacion final con superficie y posicion inicial por defecto", () => {
     expect(controladorAuto("5,5/1,2N/IDI")).toEqual("(1,2)O");
   });
+
+  it("deberia poder permitir controlar auto sin comandos por defecto", () => {
+    expect(controladorAuto("5,5/1,2N/AA")).toEqual("(1,4)N");
+  });
+
 });

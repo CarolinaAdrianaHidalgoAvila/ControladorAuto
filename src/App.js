@@ -15,18 +15,35 @@ function avanzarEnY(cadenaControladores, posicionY, orientacion){
     }
     return posicionY;
 }
+
 function obtenerOrientacionFinal(orientacion, orientaciones){
     let orientacionFinal = orientacion;
     if(orientacion==orientaciones[3]) orientacionFinal = orientaciones[0];
           else orientacionFinal = orientaciones[orientaciones.indexOf(orientacion)+1];
     return orientacionFinal;
   }
+  function obtenerPosicionInicialY(cadenaControlAuto){
+    let cadenaSinSignos= obtenerCadenaSinSignos(cadenaControlAuto);
+    return cadenaSinSignos[3];
+}
+function obtenerPosicionInicialX(cadenaControlAuto){
+    let cadenaSinSignos= obtenerCadenaSinSignos(cadenaControlAuto);
+    return cadenaSinSignos[2];
+}
+function obtenerOrientacionInicial(cadenaControlAuto){
+    let cadenaSinSignos= obtenerCadenaSinSignos(cadenaControlAuto);
+    return cadenaSinSignos[4];
+}
+function obtenerDimensionMatriz(cadenaControlAuto){
+    let cadenaSinSignos= obtenerCadenaSinSignos(cadenaControlAuto);
+    let dimensiones=[cadenaSinSignos[0], cadenaSinSignos[1]];
+    return dimensiones;
+}
 function controladorAuto(cadenaControlAuto) {
-    let dimensionMatrizX = 5;
-    let dimensionMatrizY = 5;
-    let posicionInicialX = 1;
-    let posicionInicialY= 2;
-    let orientacion = "N" ;
+    let dimensionMatriz = obtenerDimensionMatriz(cadenaControlAuto);
+    let posicionInicialX = obtenerPosicionInicialX(cadenaControlAuto);
+    let posicionInicialY= obtenerPosicionInicialY(cadenaControlAuto);
+    let orientacion = obtenerOrientacionInicial(cadenaControlAuto);
     let x = posicionInicialX;
     let y=posicionInicialY;
     let controladores=obtenerCadenaControles(cadenaControlAuto);
