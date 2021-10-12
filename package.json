@@ -6,8 +6,8 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest --watch",
-    "test-once": "jest"
+    "test": "jest --coverage --watch",
+    "test-once": "jest --coverage"
   },
   "author": "Carolina Adriana Hidalgo Avila",
   "license": "ISC",
