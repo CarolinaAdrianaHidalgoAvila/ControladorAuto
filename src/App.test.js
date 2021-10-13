@@ -49,4 +49,7 @@ describe("Controlar un Auto", () => {
   it("deberia no salir del limite en Y", () => {
     expect(controladorAuto("5,5/1,5N/A")).toEqual("(1,5)N");
   });
+  it("deberia no salir del limite en X", () => {
+    expect(controladorAuto("5,5/5,1E/A")).toEqual("(5,1)E");
+  });
 });
