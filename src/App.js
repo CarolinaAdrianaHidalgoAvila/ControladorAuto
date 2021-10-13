@@ -42,14 +42,9 @@ function obtenerDimensionMatriz(cadenaControlAuto){
     let dimensiones=[cadenaSinSignos[0], cadenaSinSignos[1]];
     return dimensiones;
 }
-function posicionFueraLimiteY(posicionY, limiteY){
+function posicionMayorLimite(posicion, limite){
     let respuesta = false;
-    if(posicionY> limiteY) respuesta = true;
-    return respuesta;
-}
-function posicionFueraLimiteX(posicionX, limiteX){
-    let respuesta = false;
-    if(posicionX> limiteX) respuesta = true;
+    if(posicion> limite) respuesta = true;
     return respuesta;
 }
 function controladorAuto(cadenaControlAuto) {
@@ -70,8 +65,8 @@ function controladorAuto(cadenaControlAuto) {
       if(comando=="D") orientacion =  obtenerOrientacionFinal(orientacion, ['N','O','S','E'].reverse());
     }
     let posicionFinal = `(${x},${y})${orientacion}`;
-    if( posicionFueraLimiteY(y,dimensionMatrizY)==true) posicionFinal = `(${x},${y-1})${orientacion}`;
-    if(  posicionFueraLimiteX(x,dimensionMatrizX)==true) posicionFinal = `(${x-1},${y})${orientacion}`;
+    if( posicionMayorLimite(y,dimensionMatrizY)==true) posicionFinal = `(${x},${y-1})${orientacion}`;
+    if(  posicionMayorLimite(x,dimensionMatrizX)==true) posicionFinal = `(${x-1},${y})${orientacion}`;
   return posicionFinal;
 }
 

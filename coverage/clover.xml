@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1634159556251" clover="3.2.0">
-  <project timestamp="1634159556252" name="All files">
-    <metrics statements="49" coveredstatements="49" conditionals="24" coveredconditionals="24" methods="12" coveredmethods="12" elements="85" coveredelements="85" complexity="0" loc="49" ncloc="49" packages="1" files="1" classes="1"/>
+<coverage generated="1634161029775" clover="3.2.0">
+  <project timestamp="1634161029776" name="All files">
+    <metrics statements="46" coveredstatements="46" conditionals="22" coveredconditionals="22" methods="11" coveredmethods="11" elements="79" coveredelements="79" complexity="0" loc="46" ncloc="46" packages="1" files="1" classes="1"/>
     <file name="App.js" path="E:\CAROLINA\6_SEMESTRE\IngenieriaSoftware\ControladorAuto\parcel-jest-base-main\src\App.js">
-      <metrics statements="49" coveredstatements="49" conditionals="24" coveredconditionals="24" methods="12" coveredmethods="12"/>
+      <metrics statements="46" coveredstatements="46" conditionals="22" coveredconditionals="22" methods="11" coveredmethods="11"/>
       <line num="2" count="80" type="stmt"/>
       <line num="5" count="16" type="stmt"/>
       <line num="6" count="16" type="stmt"/>
@@ -29,30 +29,27 @@
       <line num="41" count="16" type="stmt"/>
       <line num="42" count="16" type="stmt"/>
       <line num="43" count="16" type="stmt"/>
-      <line num="46" count="16" type="stmt"/>
-      <line num="47" count="16" type="cond" truecount="2" falsecount="0"/>
-      <line num="48" count="16" type="stmt"/>
+      <line num="46" count="32" type="stmt"/>
+      <line num="47" count="32" type="cond" truecount="2" falsecount="0"/>
+      <line num="48" count="32" type="stmt"/>
       <line num="51" count="16" type="stmt"/>
-      <line num="52" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="52" count="16" type="stmt"/>
       <line num="53" count="16" type="stmt"/>
+      <line num="54" count="16" type="stmt"/>
+      <line num="55" count="16" type="stmt"/>
       <line num="56" count="16" type="stmt"/>
       <line num="57" count="16" type="stmt"/>
       <line num="58" count="16" type="stmt"/>
-      <line num="59" count="16" type="stmt"/>
-      <line num="60" count="16" type="stmt"/>
-      <line num="61" count="16" type="stmt"/>
-      <line num="62" count="16" type="stmt"/>
-      <line num="63" count="16" type="stmt"/>
-      <line num="64" count="42" type="stmt"/>
+      <line num="59" count="42" type="stmt"/>
+      <line num="60" count="42" type="cond" truecount="2" falsecount="0"/>
+      <line num="61" count="27" type="stmt"/>
+      <line num="62" count="27" type="stmt"/>
+      <line num="64" count="42" type="cond" truecount="2" falsecount="0"/>
       <line num="65" count="42" type="cond" truecount="2" falsecount="0"/>
-      <line num="66" count="27" type="stmt"/>
-      <line num="67" count="27" type="stmt"/>
-      <line num="69" count="42" type="cond" truecount="2" falsecount="0"/>
-      <line num="70" count="42" type="cond" truecount="2" falsecount="0"/>
-      <line num="72" count="16" type="stmt"/>
-      <line num="73" count="16" type="cond" truecount="2" falsecount="0"/>
-      <line num="74" count="16" type="cond" truecount="2" falsecount="0"/>
-      <line num="75" count="16" type="stmt"/>
+      <line num="67" count="16" type="stmt"/>
+      <line num="68" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="69" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="70" count="16" type="stmt"/>
     </file>
   </project>
 </coverage>
