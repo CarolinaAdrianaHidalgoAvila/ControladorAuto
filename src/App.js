@@ -15,9 +15,10 @@ function avanzarEnY(cadenaControladores, posicionY, orientacion){
     }
     return posicionY;
 }
-function avanzarEnX(cadenaControladores, posicionX, orientacion){
+function desplazarEnX(cadenaControladores, posicionX, orientacion){
     for(var i = 0; i<cadenaControladores.length;i++){
         if(cadenaControladores[i]=="A" && orientacion =="E") posicionX++;
+        if(cadenaControladores[i]=="A" && orientacion =="O") posicionX--;
     }
     return posicionX;
 }
@@ -53,7 +54,7 @@ function controladorAuto(cadenaControlAuto) {
     let y=posicionInicialY;
     let controladores=obtenerCadenaControles(cadenaControlAuto);
     y = avanzarEnY(controladores, posicionInicialY, orientacion);
-    x = avanzarEnX(controladores, posicionInicialX, orientacion)
+    x = desplazarEnX(controladores, posicionInicialX, orientacion);
     for(var i = 0; i<controladores.length;i++){
         if (controladores[i]== "I") orientacion=obtenerOrientacionFinal(orientacion, ['N','O','S','E']);;
         if (controladores[i]== "D") orientacion=obtenerOrientacionFinal(orientacion, ['N','O','S','E'].reverse());;
