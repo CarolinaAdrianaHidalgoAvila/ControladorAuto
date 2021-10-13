@@ -34,6 +34,8 @@ describe("Controlar un Auto", () => {
   it("deberia retroceder en Y", () => {
     expect(controladorAuto("5,5/1,2S/A")).toEqual("(1,1)S");
   });
-  
+  it("deberia poder girar Izquierda y avanzar ", () => {
+    expect(controladorAuto("5,5/1,2N/IA")).toEqual("(0,2)O");
+  });
 
 });

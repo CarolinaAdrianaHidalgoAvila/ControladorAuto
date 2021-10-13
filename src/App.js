@@ -9,18 +9,14 @@ function obtenerCadenaControles(cadenaControlAuto){
     }
     return controladores;
 }
-function deplazarEnY(cadenaControladores, posicionY, orientacion){
-    for(var i = 0; i<cadenaControladores.length;i++){
-        if(cadenaControladores[i]=="A" && orientacion =="N") posicionY++;
-        if(cadenaControladores[i]=="A" && orientacion =="S") posicionY--;
-    }
+function deplazarEnY(posicionY, orientacion){
+    if(orientacion =="N") posicionY++;
+    if( orientacion =="S") posicionY--;
     return posicionY;
 }
-function desplazarEnX(cadenaControladores, posicionX, orientacion){
-    for(var i = 0; i<cadenaControladores.length;i++){
-        if(cadenaControladores[i]=="A" && orientacion =="E") posicionX++;
-        if(cadenaControladores[i]=="A" && orientacion =="O") posicionX--;
-    }
+function desplazarEnX(posicionX, orientacion){
+    if( orientacion =="E") posicionX++;
+    if( orientacion =="O") posicionX--;
     return posicionX;
 }
 function obtenerOrientacionFinal(orientacion, orientaciones){
@@ -54,11 +50,14 @@ function controladorAuto(cadenaControlAuto) {
     let x = posicionInicialX;
     let y=posicionInicialY;
     let controladores=obtenerCadenaControles(cadenaControlAuto);
-    y = deplazarEnY(controladores, posicionInicialY, orientacion);
-    x = desplazarEnX(controladores, posicionInicialX, orientacion);
-    for(var i = 0; i<controladores.length;i++){
-        if (controladores[i]== "I") orientacion=obtenerOrientacionFinal(orientacion, ['N','O','S','E']);;
-        if (controladores[i]== "D") orientacion=obtenerOrientacionFinal(orientacion, ['N','O','S','E'].reverse());;
+    for(var i=0;i<controladores.length;i++){   
+      let comando = controladores[i];
+      if(comando =="A") { 
+        x = desplazarEnX(x, orientacion);
+        y = deplazarEnY(y, orientacion);
+      }  
+      if(comando=="I") orientacion =  obtenerOrientacionFinal(orientacion, ['N','O','S','E']); 
+      if(comando=="D") orientacion =  obtenerOrientacionFinal(orientacion, ['N','O','S','E'].reverse());
     }
     let posicionFinal = `(${x},${y})${orientacion}`;
   return posicionFinal;
