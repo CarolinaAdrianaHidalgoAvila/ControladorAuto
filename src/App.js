@@ -42,8 +42,13 @@ function obtenerDimensionMatriz(cadenaControlAuto){
     let dimensiones=[cadenaSinSignos[0], cadenaSinSignos[1]];
     return dimensiones;
 }
+function posicionDentroLimite(posicionY, limiteY){
+    let respuesta = false;
+    if(posicionY< limiteY) respuesta = true;
+    return respuesta;
+}
 function controladorAuto(cadenaControlAuto) {
-    let dimensionMatriz = obtenerDimensionMatriz(cadenaControlAuto);
+    let [dimensionMatrizX, dimensionMatrizY] = obtenerDimensionMatriz(cadenaControlAuto);
     let posicionInicialX = obtenerPosicionInicialX(cadenaControlAuto);
     let posicionInicialY= obtenerPosicionInicialY(cadenaControlAuto);
     let orientacion = obtenerOrientacionInicial(cadenaControlAuto);
@@ -52,7 +57,7 @@ function controladorAuto(cadenaControlAuto) {
     let controladores=obtenerCadenaControles(cadenaControlAuto);
     for(var i=0;i<controladores.length;i++){   
       let comando = controladores[i];
-      if(comando =="A") { 
+      if(comando =="A" && posicionDentroLimite(y,dimensionMatrizY)==true) { 
         x = desplazarEnX(x, orientacion);
         y = deplazarEnY(y, orientacion);
       }  
