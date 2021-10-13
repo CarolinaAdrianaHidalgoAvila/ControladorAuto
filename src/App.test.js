@@ -25,4 +25,8 @@ describe("Controlar un Auto", () => {
     expect(controladorAuto("5,5/1,2N/AA")).toEqual("(1,4)N");
   });
 
+  it("deberia avanzar en x", () => {
+    expect(controladorAuto("5,5/1,2E/AA")).toEqual("(3,2)E");
+  });
+
 });
