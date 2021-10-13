@@ -43,4 +43,7 @@ describe("Controlar un Auto", () => {
   it("deberia poder girar Derecha y avanzar mas de una vez ", () => {
     expect(controladorAuto("5,5/3,3E/AADAADADDA")).toEqual("(5,1)E");
   });
+  it("deberia poder girar Izquierda y avanzar mas de una vez ", () => {
+    expect(controladorAuto("5,5/1,2N/IAIAIAIAA")).toEqual("(1,3)N");
+  });
 });
