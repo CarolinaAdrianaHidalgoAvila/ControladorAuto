@@ -60,4 +60,7 @@ describe("Controlar un Auto", () => {
   it("deberia saltar(2 posiciones) N en eje Y", () => {
     expect(controladorAuto("5,5/1,2N/S")).toEqual("(1,4)N");
   });
+  it("deberia saltar(2 posiciones) E en eje X", () => {
+    expect(controladorAuto("5,5/1,2E/S")).toEqual("(3,2)E");
+  });
 });
