@@ -19,6 +19,13 @@ function desplazarEnX(posicionX, orientacion){
     if( orientacion =="O") posicionX--;
     return posicionX;
 }
+function SaltarEnY(posicionInicialY,orientacion){
+  let posicionActual = parseInt(posicionInicialY);
+  if(orientacion =="N"){
+      posicionActual = posicionInicialY + 2;
+  }
+    return posicionActual;
+}
 function obtenerOrientacionFinal(orientacion, orientaciones){
     let orientacionFinal = orientacion;
     if(orientacion==orientaciones[3]) orientacionFinal = orientaciones[0];
@@ -53,13 +60,16 @@ function controladorAuto(cadenaControlAuto) {
     let posicionInicialY= obtenerPosicionInicialY(cadenaControlAuto);
     let orientacion = obtenerOrientacionInicial(cadenaControlAuto);
     let x = posicionInicialX;
-    let y=posicionInicialY;
+    let y= parseInt(posicionInicialY);
     let controladores=obtenerCadenaControles(cadenaControlAuto);
     for(var i=0;i<controladores.length;i++){   
       let comando = controladores[i];
       if(comando =="A" ) { 
         x = desplazarEnX(x, orientacion);
         y = deplazarEnY(y, orientacion);
+      }
+      if (comando == "S"){
+          y = SaltarEnY(y, orientacion);
       }  
       if(comando=="I") orientacion =  obtenerOrientacionFinal(orientacion, ['N','O','S','E']); 
       if(comando=="D") orientacion =  obtenerOrientacionFinal(orientacion, ['N','O','S','E'].reverse());
