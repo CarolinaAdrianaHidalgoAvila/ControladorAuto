@@ -28,12 +28,14 @@ describe("Controlar un Auto", () => {
   it("deberia avanzar en x", () => {
     expect(controladorAuto("5,5/1,2E/AA")).toEqual("(3,2)E");
   });
+
   it("deberia retroceder en x", () => {
     expect(controladorAuto("5,5/1,2O/A")).toEqual("(0,2)O");
   });
   it("deberia retroceder en Y", () => {
     expect(controladorAuto("5,5/1,2S/A")).toEqual("(1,1)S");
   });
+
   it("deberia poder girar Izquierda y avanzar ", () => {
     expect(controladorAuto("5,5/1,2N/IA")).toEqual("(0,2)O");
   });
@@ -45,6 +47,9 @@ describe("Controlar un Auto", () => {
   });
   it("deberia poder girar Izquierda y avanzar mas de una vez ", () => {
     expect(controladorAuto("5,5/1,2N/IAIAIAIAA")).toEqual("(1,3)N");
+  });
+  it("deberia poder girar con comandos Combinados ", () => {
+    expect(controladorAuto("5,5/1,2N/IADA")).toEqual("(0,3)N");
   });
   it("deberia no salir del limite en Y", () => {
     expect(controladorAuto("5,5/1,5N/A")).toEqual("(1,5)N");
